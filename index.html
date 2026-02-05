@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Mehak 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #ff758c, #ff7eb3, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 350px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 30px;
+      border: none;
+      background: white;
+      color: #ff4f7b;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.15em;
+      animation: pop 1s ease;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255,255,255,0.7);
+      animation: float 6s linear infinite;
+      font-size: 20px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>🎂 Happy Birthday Mehak 🎂</h1>
+    <p>
+      Today isn’t just a date.  
+      It’s the day the world became more beautiful 💖
+    </p>
+
+    <button onclick="showSurprise()">Click for a Surprise ✨</button>
+
+    <div id="surprise">
+      🌸 Mehak, you are magic in human form.  
+      Your smile can calm storms,  
+      your presence feels like home.  
+      <br><br>
+      I hope today reminds you  
+      how deeply special you are 💕  
+      <br><br>
+      — From Jashan ❤️
+    </div>
+  </div>
+
+  <script>
+    function showSurprise() {
+      document.getElementById("surprise").style.display = "block";
+      createHearts();
+    }
+
+    function createHearts() {
+      for (let i = 0; i < 25; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 6000);
+      }
+    }
+  </script>
+
+</body>
+</html>
